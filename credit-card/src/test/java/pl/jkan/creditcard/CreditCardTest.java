@@ -20,6 +20,16 @@ public class CreditCardTest {
         CreditCard card = new CredtCard();
         card.block();
         
-        Assert.assertTrue(card)
+        Assert.assertTrue(card.isBlocked());
+        
+    }
+    @Test
+    public void allowedWithdrawMoney() {
+        CreditCard card = new CreditCard();
+        card.assignLimit(2000);
+        
+        card.withdraw(200);
+        
+        Assert.assertEquals(1800, card.getBalance());
     }
 }
